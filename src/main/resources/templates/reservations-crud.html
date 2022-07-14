@@ -17,8 +17,8 @@
             <!-- Content -->
             <div class="d-flex border px-5 rounded my-3" style="background-color: #ededed;">
                 <div class="col mt-3 mx-auto">
-                    <!-- Tittle -->
-                    <div th:replace="fragments/content :: tittle('Reservations')">
+                    <!-- title -->
+                    <div th:replace="fragments/content :: title('Reservations')">
                     </div>
 
                     <!-- Action menu -->
@@ -61,7 +61,7 @@
             </div>
 
             <!-- Edit Modal -->
-            <div th:replace="fragments/modal :: edit(tittle='Edit Reservation', form=~{this::#edit-form}, loop='reservation', entity=${reservations}, id='reservationId')"> 
+            <div th:replace="fragments/modal :: edit(title='Edit Reservation', form=~{this::#edit-form}, loop='reservation', entity=${reservations}, id='reservationId')"> 
                 <th:block id="edit-form">
                     <form th:method="put" th:action="@{/update/reservation/} + ${reservation.reservationId}" th:object="${newReserv}">
                         <div class="modal-body">
@@ -95,7 +95,7 @@
             </div>
 
             <!-- Delete Modal -->
-            <div th:replace="fragments/modal :: delete(tittle='Delete Reservation', form=~{this::#delete-form}, loop='reservation', entity=${reservations}, id='reservationId')">
+            <div th:replace="fragments/modal :: delete(title='Delete Reservation', form=~{this::#delete-form}, loop='reservation', entity=${reservations}, id='reservationId')">
                 <th:block id="delete-form">
                     <form th:method="delete" th:action="@{/delete/reservation/} + ${reservation.reservationId}">
                         <div class="modal-body">
@@ -112,7 +112,7 @@
             </div>
 
             <!-- Create Modal -->
-            <div th:replace="fragments/modal :: create(tittle='Create Reservation', form=~{this::#create-form})">
+            <div th:replace="fragments/modal :: create(title='Create Reservation', form=~{this::#create-form})">
                 <th:block id="create-form">
                     <form method="post" th:action="@{/create/reservation}" th:object="${newReserv}">
                         <div class="modal-body">
@@ -142,7 +142,7 @@
             </div>
 
             <!-- Get One Modal -->
-            <div th:replace="fragments/modal :: get(tittle='Reservation Detail', form=~{this::#getone-form}, loop='reservation', entity=${reservations}, id='reservationId')">
+            <div th:replace="fragments/modal :: get(title='Reservation Detail', form=~{this::#getone-form}, loop='reservation', entity=${reservations}, id='reservationId')">
                 <th:block id="getone-form">
                     <table class="table table-condensed">
                         <tbody>
