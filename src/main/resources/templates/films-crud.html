@@ -10,8 +10,8 @@
         <!-- Content -->
         <div class="d-flex border px-5 rounded my-3" style="background-color: #ededed;">
             <div class="col mt-3 mx-auto">
-                <!-- Tittle -->
-                <div th:replace="fragments/content :: tittle('Films')">
+                <!-- title -->
+                <div th:replace="fragments/content :: title('Films')">
                 </div>
 
                 <!-- Action menu -->
@@ -65,7 +65,7 @@
         <!-- Modals -->
 
         <!-- Edit Modal -->
-        <div th:replace="fragments/modal :: edit(tittle='Edit Film', form=~{this::#edit-form}, loop='film', entity=${films}, id='filmCode')">
+        <div th:replace="fragments/modal :: edit(title='Edit Film', form=~{this::#edit-form}, loop='film', entity=${films}, id='filmCode')">
             <th:block id="edit-form">
                 <form th:method="PUT" th:action="@{/update/film/} + ${film.filmCode}" th:object="${updateFilm}">
                     <div class="modal-body">
@@ -112,7 +112,7 @@
         </div>
 
         <!-- Delete Modal -->
-        <div th:replace="fragments/modal :: delete(tittle='Delete Films', form=~{this::#delete-form}, loop='film', entity=${films}, id='filmCode')">
+        <div th:replace="fragments/modal :: delete(title='Delete Films', form=~{this::#delete-form}, loop='film', entity=${films}, id='filmCode')">
             <th:block id="delete-form">
                 <form th:method="delete" th:action="@{/delete/film/} + ${film.filmCode}">
                     <div class="modal-body">
@@ -130,7 +130,7 @@
         </div>
 
         <!-- Create Modal -->
-        <div th:replace="fragments/modal :: create(tittle='Create Film', form=~{this::#create-form})">
+        <div th:replace="fragments/modal :: create(title='Create Film', form=~{this::#create-form})">
             <th:block id="create-form">
                 <form method="post" th:action="@{/create/film}" th:object="${newFilm}">
                     <div class="modal-body">
@@ -164,7 +164,7 @@
         </div>
     
         <!-- Get One -->
-        <div th:replace="fragments/modal :: get(tittle='Film Detail', form=~{this::#getone-form}, loop='film', entity=${films}, id='filmCode')">
+        <div th:replace="fragments/modal :: get(title='Film Detail', form=~{this::#getone-form}, loop='film', entity=${films}, id='filmCode')">
             <th:block id="getone-form">
                 <table class="table table-condensed">
                     <tbody>
