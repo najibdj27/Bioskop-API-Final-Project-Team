@@ -45,13 +45,13 @@
                         </div>
 
                         <div id="data">
-                            <th class="text-center" th:text="${iter.index+1}"></th>
-                            <td class="text-lowercase text-center">
+                            <td class="text-center" th:text="${iter.index + 1 + ((currentPage-1)*10)}"></td>
+                            <td class="text-lowercase">
                                 <a class="text-dark" style="text-decoration:none;" th:text="${reservation.users.username}" th:href="'#showModal'+${reservation.reservationId}" data-bs-toggle="modal" th:attr="data-bs-target='#showModal'+${reservation.reservationId}"></a>
                             </td>
                             <td class="text-center" th:text="${reservation.schedule.scheduleId}"></td>
-                            <td th:if="${reservation.isActive}==true" class="text-center">v</td>
-                            <td th:unless="${reservation.isActive}==true" class="text-center"></td>
+                            <td th:if="${reservation.isActive}==true" class="text-center">&#10004</td>
+                            <td th:unless="${reservation.isActive}==true" class="text-center">&#10006</td>
                         </div>
                     </div>
 

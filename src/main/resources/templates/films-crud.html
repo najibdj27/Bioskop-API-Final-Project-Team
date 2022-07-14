@@ -49,12 +49,12 @@
                     <div id="data">
                         <td class="text-center" scope="row" th:text="${iter.index + 1 + ((currentPage-1)*10)}"></td>
                     
-                        <td>
+                        <td class="text-center">
                             <a class="text-lowercase text-dark" style="text-decoration:none;" th:href="'#showModal'+${film.filmCode}" th:text="${film.filmCode}" data-bs-toggle="modal" th:attr="data-bs-target='#showModal'+${film.filmCode}"></a>
                         </td>
                         <td th:text="${film.filmName}"></td>
-                        <td th:text="${film.seatId.seatId}"></td>
-                        <td th:text="${film.isPlaying} ? 'Tayang' : 'Tidak Tayang'"></td>
+                        <td class="text-center" th:text="${film.seatId.seatId}"></td>
+                        <td class="text-center" th:text="${film.isPlaying} ? '&#10004' : '&#10006'"></td>
                     </div>
                 </div>
                 <!-- Pagination -->

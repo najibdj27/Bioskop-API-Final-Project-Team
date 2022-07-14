@@ -52,7 +52,7 @@
                         </th:block>
 
                         <th:block id="data">
-                            <th scope="row" th:text="${iter.index + 1}"></th>
+                            <td class="text-center" th:text="${iter.index + 1 + ((currentPage-1)*10)}"></td>
                             <td>
                                 <a class="text-lowercase text-dark" style="text-decoration:none;" th:href="'#showModal'+${user.userId}" th:text="${user.username}" data-bs-toggle="modal" th:attr="data-bs-target='#showModal'+${user.userId}"></a>
                             </td>
