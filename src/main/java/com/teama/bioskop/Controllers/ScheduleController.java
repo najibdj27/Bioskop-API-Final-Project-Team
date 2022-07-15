@@ -76,7 +76,7 @@ public class ScheduleController {
             logger.info("Create Schedule "+schedule);
             logger.info("-----------------------------------");
             ResponseHandler.generateResponse("Successfully Create Schedule!", HttpStatus.OK, schedule);
-            return "redirect:/crud/schedule";
+            return "redirect:/crud/schedule/1";
         }catch (Throwable err){
             model.addAttribute("error", err.getMessage());
             model.addAttribute("errorStatus", HttpStatus.BAD_REQUEST);
@@ -99,7 +99,7 @@ public class ScheduleController {
             logger.info("Update Schedule "+schedule);
             logger.info("-----------------------------------");
             ResponseHandler.generateResponse("Successfully Update Schedule", HttpStatus.OK, schedule);
-            return "redirect:/crud/schedule";
+            return "redirect:/crud/schedule/1";
         }catch (Throwable err){
             model.addAttribute("error", err.getMessage());
             model.addAttribute("errorStatus", HttpStatus.BAD_REQUEST);
@@ -120,7 +120,7 @@ public class ScheduleController {
             this.scheduleService.deleteScheduleById(schedule);
             logger.info("-----------------------------------");
             ResponseHandler.generateResponse("Successfully Delete Schedule", HttpStatus.OK, null);
-            return "redirect:/crud/schedule";
+            return "redirect:/crud/schedule/1";
         }catch (Throwable err){
             model.addAttribute("error", err.getMessage());
             model.addAttribute("errorStatus", HttpStatus.INTERNAL_SERVER_ERROR);
