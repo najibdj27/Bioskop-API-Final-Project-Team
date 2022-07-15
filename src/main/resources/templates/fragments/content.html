@@ -6,7 +6,7 @@
 </div>
 
 <!-- Action Menu -->
-<div th:fragment="action-menu(action)" class="row">
+<div th:fragment="action-menu(action, placeholder)" class="row">
     <!-- Create new Button -->
     <div class="col">
         <div class="me-3 d-grid gap-2 d-flex">
@@ -25,8 +25,8 @@
     <div class="col">
         <form th:action="@{/crud/__${action}__/1}">
             <div class="col-5 input-group mb-3">
-                <input th:if="${searchby != null}" type="text" class="form-control" placeholder="Search by username" aria-label="Recipient's username" th:name="searchby" th:value="${searchby}" aria-describedby="button-addon2">
-                <input th:unless="${searchby != null}" type="text" class="form-control" placeholder="Search by username" aria-label="Recipient's username" th:name="searchby" aria-describedby="button-addon2">
+                <input th:if="${searchby != null}" type="text" class="form-control" th:placeholder="'Search by ' + ${placeholder}" aria-label="Recipient's username" th:name="searchby" th:value="${searchby}" aria-describedby="button-addon2">
+                <input th:unless="${searchby != null}" type="text" class="form-control" th:placeholder="'Search by ' + ${placeholder}" aria-label="Recipient's username" th:name="searchby" aria-describedby="button-addon2">
                 <button class="btn btn-outline-light border border-secondary text-white" type="submit" id="button-addon2">
                     <lord-icon
                         src="https://cdn.lordicon.com/pvbutfdk.json"
