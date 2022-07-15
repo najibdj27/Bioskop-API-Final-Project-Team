@@ -72,7 +72,7 @@ public class SeatsController {
         logger.info("Create seats "+seats);
         logger.info("-----------------------------------");
         ResponseHandler.generateResponse("Successfully Create Seats!", HttpStatus.OK, seats);
-        return "redirect:/crud/seats";
+        return "redirect:/crud/seats/1";
         }catch (Throwable err){
             model.addAttribute("error", err.getMessage());
             model.addAttribute("errorStatus", HttpStatus.BAD_REQUEST);
@@ -97,7 +97,7 @@ public class SeatsController {
             logger.info("Update Seats "+seats);
             logger.info("-----------------------------------");
             ResponseHandler.generateResponse("Successfully Update Seats", HttpStatus.OK, seats);
-            return "redirect:/crud/seats";
+            return "redirect:/crud/seats/1";
         }catch (Throwable err){
             model.addAttribute("error", err.getMessage());
             model.addAttribute("errorStatus", HttpStatus.BAD_REQUEST);
@@ -119,7 +119,7 @@ public class SeatsController {
         seatsService.deleteSeatById(id);
         logger.info("-----------------------------------");
         ResponseHandler.generateResponse("Successfully Delete Seats", HttpStatus.OK, null);
-        return "redirect:/crud/seats";
+        return "redirect:/crud/seats/1";
         }catch (Throwable err){
             model.addAttribute("error", err.getMessage());
             model.addAttribute("errorStatus", HttpStatus.INTERNAL_SERVER_ERROR);
