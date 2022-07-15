@@ -64,7 +64,7 @@ public class ReservationsController {
             model.addAttribute("error", false);
             model.addAttribute("message", e.getMessage());
             model.addAttribute("reservations", null);
-            return "reservations-crud";
+            return "reservations-crud/1";
         }
     }
 
@@ -85,7 +85,7 @@ public class ReservationsController {
         } catch (DataNotFoundException e) {
             model.addAttribute("error", true);
             model.addAttribute("message", e.getMessage());
-            return "redirect:/crud/reservations";
+            return "redirect:/crud/reservations/1";
         }
     }
 
@@ -108,7 +108,7 @@ public class ReservationsController {
         } catch (DataNotFoundException e) {
             model.addAttribute("error", true);
             model.addAttribute("message", e.getMessage());
-            return "redirect:/crud/reservations";
+            return "redirect:/crud/reservations/1";
         }
     }
 
@@ -130,7 +130,7 @@ public class ReservationsController {
         } catch (DataNotFoundException e) {
             model.addAttribute("error", true);
             model.addAttribute("message", e.getMessage());
-            return "redirect:/crud/reservations";
+            return "redirect:/crud/reservations/1";
         }
     }
 }
